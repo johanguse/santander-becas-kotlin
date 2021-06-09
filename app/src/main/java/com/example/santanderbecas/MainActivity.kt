@@ -13,36 +13,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import com.example.santanderbecas.R
-import com.example.santanderbecas.ui.theme.SantanderBecasTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SantanderBecasTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
-            }
+            MainContent()
         }
     }
 }
 
+@Preview(showBackground = true)
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+fun MainContent(){
+    Scaffold(
+        topBar = { Toolbar() }
+    ) {
 
-
-@Composable
-fun DefaultPreview() {
-    SantanderBecasTheme {
-        Greeting("Android")
     }
 }
 
-@Preview(showBackground = true)
+
 @Composable
 private fun Toolbar() {
     TopAppBar(backgroundColor = Color.Red) {
