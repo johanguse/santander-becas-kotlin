@@ -3,6 +3,7 @@ package com.example.santanderbecas
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -27,16 +28,39 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainContent(){
     Scaffold(
-        topBar = { Toolbar() }
-    ) {
+        topBar = { Toolbar() },
+        content = { BecasHomeContent() }
+    )
+}
 
+@Composable
+private fun BecasHomeContent(){
+    Row (
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(90.dp)
+            .background(color = Color.Red)
+            .padding(15.dp, 0.dp)
+    ) {
+        Column () {
+            Row() {
+                Column() {
+                    Text("Olá, Johan!", color = Color.White, modifier = Modifier.padding(bottom = 5.dp))
+                }
+            }
+            Row() {
+                Text("AG: 2030", color = Color.White, modifier = Modifier.padding(end = 18.dp))
+                Text("CC: 01258469", color = Color.White)
+            }
+        }
     }
 }
 
 
 @Composable
 private fun Toolbar() {
-    TopAppBar(backgroundColor = Color.Red) {
+    TopAppBar(backgroundColor = Color.Red, elevation = 0.dp) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
