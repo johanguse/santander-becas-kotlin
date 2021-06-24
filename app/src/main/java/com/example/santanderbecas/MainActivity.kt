@@ -40,16 +40,17 @@ private fun Toolbar() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 10.dp),
+                .padding(5.dp, 0.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_menu),
                 contentDescription = null,
-                tint = Color.White
+                tint = Color.White,
+                modifier = Modifier.padding(0.dp, 15.dp)
             )
             Box(
-                modifier = Modifier.padding(12.dp),
+                modifier = Modifier.padding(0.dp, 15.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
@@ -61,7 +62,8 @@ private fun Toolbar() {
             Icon(
                 painter = painterResource(id = R.drawable.ic_notification),
                 contentDescription = null,
-                tint = Color.White
+                tint = Color.White,
+                modifier = Modifier.padding(0.dp, 15.dp)
             )
         }
         
